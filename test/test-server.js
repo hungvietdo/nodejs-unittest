@@ -1,3 +1,4 @@
+//This is to direct connection to test database
 process.env.NODE_ENV = 'test';
 
 var chai = require('chai');
@@ -15,6 +16,7 @@ describe('Blobs', function() {
 
   //Blob.collection.drop();
 
+  //This is to insert data with beforeEach and afterEach
   beforeEach(function(done){
     var newBlob = new Blob({
       name: 'Bat',
@@ -29,6 +31,7 @@ describe('Blobs', function() {
     done();
   });
 
+  //A test case for GET ALL
   it('should list ALL blobs on /blobs GET', function(done) {
     chai.request(server)
       .get('/blobs')
@@ -44,6 +47,8 @@ describe('Blobs', function() {
         done();
       });
   });
+
+  //A test case for GET SINGLE
 
   it('should list a SINGLE blob on /blob/<id> GET', function(done) {
       var newBlob = new Blob({
@@ -68,6 +73,8 @@ describe('Blobs', function() {
       });
   });
 
+  //A test case for POST a blob
+
   it('should add a SINGLE blob on /blobs POST', function(done) {
     chai.request(server)
       .post('/blobs')
@@ -86,6 +93,8 @@ describe('Blobs', function() {
         done();
       });
   });
+
+  //A test case for UPDATE blob
 
   it('should update a SINGLE blob on /blob/<id> PUT', function(done) {
     chai.request(server)
@@ -108,6 +117,7 @@ describe('Blobs', function() {
       });
   });
 
+  //A test case for DELETE action
   it('should delete a SINGLE blob on /blob/<id> DELETE', function(done) {
     chai.request(server)
       .get('/blobs')

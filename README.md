@@ -1,4 +1,4 @@
-nodejs-unittest with mocha and chai
+nodejs-unittest with mocha and chai. Detail of tests can be found in test/test-server.js
 
 1. Clone this repo
 2. Run: `composer install`
