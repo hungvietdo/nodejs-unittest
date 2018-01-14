@@ -13,7 +13,7 @@ chai.use(chaiHttp);
 
 describe('Blobs', function() {
 
-  Blob.collection.drop();
+  //Blob.collection.drop();
 
   beforeEach(function(done){
     var newBlob = new Blob({
